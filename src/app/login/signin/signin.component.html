@@ -1,4 +1,4 @@
-<form>
+<form  #loginForm="ngForm">
   <mat-card>
     <mat-card-header>
       <mat-card-title>
@@ -7,12 +7,12 @@
     </mat-card-header>
     <mat-card-content>
       <mat-form-field class="form-input">
-        <input matInput placeholder="Email" value="">
+        <input matInput ngModel name="account" placeholder="Email" value="">
       </mat-form-field>
       <mat-form-field  class="form-input">
-        <input matInput type="password" placeholder="Password" value="">
+        <input matInput type="password" ngModel name="password" placeholder="Password" value="">
       </mat-form-field>
-      <button mat-raised-button type="button" color="primary" >登录</button>
+      <button mat-raised-button type="button" color="primary" (click)="login(loginForm.value)" >登录</button>
     </mat-card-content>
     <mat-card-actions class="text-right">
       <p>还没有账户
@@ -23,7 +23,6 @@
       </p>
     </mat-card-actions>
   </mat-card>
-
   <mat-card>
     <mat-card-header>
       <mat-card-title>
