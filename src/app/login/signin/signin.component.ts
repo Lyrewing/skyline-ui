@@ -26,6 +26,7 @@ export class SigninComponent implements OnInit {
     }
     this.accountService.login(u.account, u.password).subscribe(response => {
           sessionStorage.setItem("token", response.data);
+          this.showMessage("成功!",'登陆');
           console.log(response)
       },
       (err) => {
@@ -41,7 +42,7 @@ export class SigninComponent implements OnInit {
     });
     bar.afterDismissed().subscribe(null, null, () => {
       if (message === '成功!' && action === '登陆') {
-        this.router.navigateByUrl('login');
+        this.router.navigateByUrl('home');
       }
     });
   }

@@ -6,6 +6,7 @@ import { RoutingModule } from './routing.module';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProjectsModule } from './projects/projects.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ProjectsModule } from './projects/projects.module';
   imports: [
     CoreModule,
     BrowserModule,
+    SharedModule,
     RoutingModule,
     BrowserAnimationsModule,
     ProjectsModule
