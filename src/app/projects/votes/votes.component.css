@@ -1,0 +1,25 @@
+
+.example-card {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    margin: 20px; 
+    width: 250px;
+  }
+  .example-header-image {
+    background-image: url('/assets/img/shiba1.jpg');
+    background-size: cover;
+  }
+
+  .vote-items{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+  .add-card {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    margin: 20px; 
+    width: 250px;
+  }

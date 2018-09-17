@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) { }
   ngOnInit() {
     //首先验证权限，没有权限直接调到登录页
+    /*
     let token = sessionStorage.getItem("token")
     if (token) {
       this.authService.CheckToken(token).subscribe((response) => {
@@ -22,6 +23,8 @@ export class HomeComponent implements OnInit {
     } else {
       this.router.navigateByUrl('login');
     }
+    */
 
+    
   }
 }
