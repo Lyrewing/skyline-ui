@@ -13,7 +13,7 @@ import {
   MatRadioModule,
   MatSnackBarModule
 } from '@angular/material';
-
+import {ViserModule} from 'viser-ng'
 @NgModule({
   imports: [
     CommonModule, 
@@ -27,7 +27,8 @@ import {
     MatInputModule,
     MatGridListModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ViserModule
   ],
   exports: [
     CommonModule, 
@@ -41,7 +42,9 @@ import {
     MatInputModule,
     MatGridListModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ViserModule,
+    
   ]
 })
 export class SharedModule { }

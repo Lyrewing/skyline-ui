@@ -4,7 +4,7 @@ export class Book{
     Author:string
     Summary:string
     Cover:string
-    BookCategory:Category
+    BookCategory?:Category
 }
 export enum Category{
     Article,
