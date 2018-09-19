@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from "rxjs";
-const HOST = 'http://localhost:5000/';
+import { environment } from "../../environments/environment";
+const HOST = environment.HOST;
 @Injectable()
 export class AuthService{
     constructor(private http:HttpClient){

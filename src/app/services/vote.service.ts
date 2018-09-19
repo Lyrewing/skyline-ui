@@ -1,8 +1,9 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { environment } from "../../environments/environment";
 
-const HOST = 'http://localhost:5000/';
+const HOST =environment.HOST
 @Injectable()
 export class VoteService{
     constructor(private http:HttpClient){

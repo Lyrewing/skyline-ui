@@ -22,7 +22,6 @@ export class ChartComponent implements OnInit {
       console.log(response)
       this.drawBarChart(response);
     })
-
   }
 
 
@@ -31,7 +30,7 @@ export class ChartComponent implements OnInit {
     var chart = new G2.Chart({
       container: 'mountNode',
       forceFit: true,
-      height: window.innerHeight
+      height: 600,
     });
     chart.source(data);
     chart.axis('name', {

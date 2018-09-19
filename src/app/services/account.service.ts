@@ -3,14 +3,16 @@ import {Observable, of} from 'rxjs';
 import {catchError, map, tap} from 'rxjs/operators';
 import {User} from '../model/User';
 import {Injectable} from '@angular/core';
+import { environment } from '../../environments/environment';
 
-const HOST = 'http://localhost:5000/';
+
+const HOST = environment.HOST;
 
 @Injectable()
 export class AccountService {
 
   constructor(private http: HttpClient) {
-
+    
   }
 
   register(accountInfo: User): Observable<User> {
