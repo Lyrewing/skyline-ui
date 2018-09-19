@@ -16,4 +16,4 @@ install:
   - npm install
 script:
   - ng build --prod
-  - ls
+  - ls ./dist/admin-ui
