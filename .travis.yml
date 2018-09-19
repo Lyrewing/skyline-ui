@@ -17,3 +17,7 @@ install:
 script:
   - ng build --prod
   - ls ./dist/admin-ui
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker version
+  - docker build -t lyrewing/skyline-ui:1.0 .
+  
