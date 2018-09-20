@@ -1,11 +1,35 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span></span>
-    <span class="example-spacer"></span>
-  </mat-toolbar-row>
-</mat-toolbar>
-<app-guide (pay) = "test()">
-</app-guide>
-<!--
-<app-votes></app-votes> 
--->
+<mat-sidenav-container>
+  <mat-sidenav mode="over" #drawer fixedInViewport="true">
+    <mat-toolbar color="primary" class="nav-menu">
+      <mat-icon (click)="drawer.toggle()">home</mat-icon>
+    </mat-toolbar>
+    <mat-nav-list>
+      <mat-list-item>
+        <mat-icon class="menu-icon">dialpad</mat-icon>
+        <span class="full-width">Redial</span>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon class="menu-icon">voicemail</mat-icon>
+        <span class="full-width">Check</span>
+        <mat-icon>expand_more</mat-icon>
+      </mat-list-item>
+      <mat-list-item>
+        <mat-icon class="menu-icon">notifications_off</mat-icon>
+        <span class="full-width">Disable alerts</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="nav-header">
+      <mat-toolbar-row>
+        <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+        <span></span>
+        <span class="example-spacer"></span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <app-guide (pay)="test()"> </app-guide>
+    <!--
+      <app-votes></app-votes> 
+      -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -5,13 +5,17 @@ import {
   MatButtonModule,
   MatCheckboxModule,
   MatToolbarModule,
-  MatIconModule,
   MatCardModule,
   MatInputModule,
   MatGridListModule,
   MatDialogModule,
   MatRadioModule,
-  MatSnackBarModule
+  MatSnackBarModule,
+  MatMenuModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule
+  
 } from '@angular/material';
 import {ViserModule} from 'viser-ng'
 @NgModule({
@@ -28,7 +32,10 @@ import {ViserModule} from 'viser-ng'
     MatGridListModule,
     MatDialogModule,
     MatSnackBarModule,
-    ViserModule
+    ViserModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatListModule
   ],
   exports: [
     CommonModule, 
@@ -44,6 +51,9 @@ import {ViserModule} from 'viser-ng'
     MatDialogModule,
     MatSnackBarModule,
     ViserModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatListModule
     
   ]
 })
