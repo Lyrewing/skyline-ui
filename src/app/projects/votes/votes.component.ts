@@ -4,6 +4,7 @@ import { books } from '../../mock/books';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
 import { VoteService } from '../../services/vote.service';
 import { Router } from '@angular/router';
+import { AddBookDialog } from '../../modals/add-modal.component';
 
 @Component({
   selector: 'app-votes',
@@ -64,15 +65,3 @@ export class VotesComponent implements OnInit {
 
 
 
-
-@Component({
-  selector: 'app-add-book-dialog',
-  templateUrl: './votes.component.add.html',
-  styleUrls:['./votes.component.css']
-  
-})
-export class AddBookDialog{
-  constructor( public dialogRef: MatDialogRef<AddBookDialog>){
-
-  }
-}
