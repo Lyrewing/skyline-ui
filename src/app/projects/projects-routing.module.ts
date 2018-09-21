@@ -9,10 +9,16 @@ import { GuideComponent } from './guide/guide.component';
 
 
 const routers: Routes = [
-    { path: 'home', component: HomeComponent },
-    { path: 'vote', component: VotesComponent },
-    { path: 'chart', component: ChartComponent },
-    { path: 'guide', component: GuideComponent }
+    {
+        path: 'home', component: HomeComponent, children: [
+            { path: 'guide', component: GuideComponent },
+            { path: 'vote', component: VotesComponent },
+            { path: 'chart', component: ChartComponent }
+        ]
+    },
+
+
+
 ]
 @NgModule({
     imports: [CommonModule, RouterModule.forChild(routers)],

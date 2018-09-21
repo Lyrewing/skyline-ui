@@ -6,10 +6,13 @@ import { Router } from '@angular/router';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  providers: [AuthService,]
+  providers: [AuthService]
 })
 export class HomeComponent implements OnInit {
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {
+
+
+  }
   ngOnInit() {
     //首先验证权限，没有权限直接调到登录页
     /*

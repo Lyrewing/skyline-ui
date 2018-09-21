@@ -1,21 +1,21 @@
 <mat-sidenav-container>
-  <mat-sidenav mode="over" #drawer fixedInViewport="true">
+  <mat-sidenav mode="side" #drawer fixedInViewport="true">
     <mat-toolbar color="primary" class="nav-menu">
       <mat-icon (click)="drawer.toggle()">home</mat-icon>
     </mat-toolbar>
     <mat-nav-list>
-      <mat-list-item>
+      <mat-list-item routerLink="./guide">
         <mat-icon class="menu-icon">dialpad</mat-icon>
-        <span class="full-width">Redial</span>
+        <span class="full-width">活动导航</span>
       </mat-list-item>
-      <mat-list-item>
+      <mat-list-item  routerLink="./vote">
         <mat-icon class="menu-icon">voicemail</mat-icon>
-        <span class="full-width">Check</span>
+        <span class="full-width">小说投票</span>
         <mat-icon>expand_more</mat-icon>
       </mat-list-item>
-      <mat-list-item>
+      <mat-list-item  routerLink="./chart">
         <mat-icon class="menu-icon">notifications_off</mat-icon>
-        <span class="full-width">Disable alerts</span>
+        <span class="full-width">投票数据排行</span>
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
@@ -27,9 +27,16 @@
         <span class="example-spacer"></span>
       </mat-toolbar-row>
     </mat-toolbar>
-    <app-guide (pay)="test()"> </app-guide>
+
+    <div class="nav-content">
+        <router-outlet></router-outlet>
+    </div>
+        
+ 
+
     <!--
+      <app-guide  *ngIf="isguide" (pay)="test()"> </app-guide>
       <app-votes></app-votes> 
-      -->
+      -->  
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -6,7 +6,10 @@ import { ProjectsModule } from './projects/projects.module';
 
 const routers: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'home', redirectTo: 'home', pathMatch: 'full' }
+  { path: 'login', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'register', redirectTo: 'register', pathMatch: 'full' },
+  { path: 'home', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ]
 @NgModule({
   imports: [CommonModule, RouterModule.forRoot(routers)],
