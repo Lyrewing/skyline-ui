@@ -15,7 +15,7 @@ before_install:
 install:
   - npm install
 script:
-  - ng build --prod
+  - ng build ---prod
   - ls ./dist/admin-ui
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker version
