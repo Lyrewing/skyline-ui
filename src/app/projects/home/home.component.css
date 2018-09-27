@@ -24,3 +24,11 @@
    box-sizing: border-box;
    padding: 64px 0 0 0;
  }
+ .aux-content{
+   position: fixed;
+   display: block;
+   right: 0px;
+   bottom: 200px;
+   z-index: 999;
+ }
+

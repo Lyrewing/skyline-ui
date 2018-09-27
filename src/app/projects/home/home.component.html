@@ -29,11 +29,13 @@
     </mat-toolbar>
 
     <div class="nav-content">
-        <router-outlet></router-outlet>
+      <div class="aux-content">
+        <a [routerLink]="[{outlets:{aux: 'consult'}}]">开始咨询</a>
+        <a [routerLink]="[{outlets:{aux: null}}]">结束咨询</a> 
+        <router-outlet name="aux"></router-outlet>
+      </div>
+      <router-outlet></router-outlet>
     </div>
-    <!--
-      <app-guide  *ngIf="isguide" (pay)="test()"> </app-guide>
-      <app-votes></app-votes> 
-      -->  
+
   </mat-sidenav-content>
 </mat-sidenav-container>

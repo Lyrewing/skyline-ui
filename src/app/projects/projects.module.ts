@@ -7,16 +7,20 @@ import { VotesComponent } from './votes/votes.component';
 import { ChartComponent } from './chart/chart.component';
 import { GuideComponent } from './guide/guide.component';
 import { AddBookDialog } from '../modals/add-modal.component';
+import { ConsultComponent } from './consult/consult.component';
+import { PermissionGuard } from '../guards/permission.guard';
+
 
 @NgModule({
   imports: [
     CommonModule,
     ProjectsRoutingModule,
-    SharedModule
+    SharedModule,
+
   ],
-  declarations: [HomeComponent, VotesComponent, ChartComponent, GuideComponent,AddBookDialog],
+  declarations: [HomeComponent, VotesComponent, ChartComponent, GuideComponent,AddBookDialog, ConsultComponent],
   entryComponents:[
     AddBookDialog
-  ]
+  ],
 })
 export class ProjectsModule { }

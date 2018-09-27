@@ -7,6 +7,7 @@ import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProjectsModule } from './projects/projects.module';
 import { SharedModule } from './shared/shared.module';
+import { PermissionGuard } from './guards/permission.guard';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,8 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     RoutingModule,
     BrowserAnimationsModule,
-    ProjectsModule
+    ProjectsModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
