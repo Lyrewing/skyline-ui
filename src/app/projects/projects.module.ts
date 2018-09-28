@@ -8,8 +8,6 @@ import { ChartComponent } from './chart/chart.component';
 import { GuideComponent } from './guide/guide.component';
 import { AddBookDialog } from '../modals/add-modal.component';
 import { ConsultComponent } from './consult/consult.component';
-import { PermissionGuard } from '../guards/permission.guard';
-
 
 @NgModule({
   imports: [
