@@ -10,37 +10,37 @@ import { AddBookDialog } from '../../modals/add-modal.component';
   selector: 'app-votes',
   templateUrl: './votes.component.html',
   styleUrls: ['./votes.component.css'],
-  providers:[VoteService]
+  providers: [VoteService]
 })
 export class VotesComponent implements OnInit {
-  
-  bookitems:Book[]
-  constructor(public dialog:MatDialog,public voteService:VoteService, public snackBar: MatSnackBar, private router: Router) { }
+
+  bookitems: Book[]
+  constructor(public dialog: MatDialog, public voteService: VoteService, public snackBar: MatSnackBar, private router: Router) { }
 
   ngOnInit() {
-    this.voteService.getBooks().subscribe(response=>{
+    this.voteService.getBooks().subscribe(response => {
       console.log(response)
-      this.bookitems=response
+      this.bookitems = response
       console.log(this.bookitems)
     })
   }
 
-  vote(bookNo:string){
+  vote(bookNo: string) {
     console.log(bookNo)
     //将数据库的值加一，如果此人已经头票则不进行显示已投
-    this.voteService.vote(bookNo).subscribe(response=>{
+    this.voteService.vote(bookNo).subscribe(response => {
       console.log(response)
-      this.showMessage("成功!","投票")
+      this.showMessage("成功!", "投票")
     })
   }
 
-  openDialog(){
-    this.dialog.open(AddBookDialog,{
-      width:'500px',
-      height:'200px'
+  openDialog() {
+    this.dialog.open(AddBookDialog, {
+      width: '500px',
+      height: '200px'
     })
   }
-  add(Id:number){
+  add(Id: number) {
     console.log(Id)
   }
 
