@@ -14,7 +14,8 @@ import {
   MatMenuModule,
   MatSidenavModule,
   MatIconModule,
-  MatListModule
+  MatListModule,
+  MatTableModule,
   
 } from '@angular/material';
 import {ViserModule} from 'viser-ng'
@@ -35,7 +36,8 @@ import {ViserModule} from 'viser-ng'
     ViserModule,
     MatMenuModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatTableModule
   ],
   exports: [
     CommonModule, 
@@ -53,8 +55,8 @@ import {ViserModule} from 'viser-ng'
     ViserModule,
     MatMenuModule,
     MatSidenavModule,
-    MatListModule
-    
+    MatListModule,
+    MatTableModule,
   ]
 })
 export class SharedModule { }

@@ -7,21 +7,31 @@ import { ChartComponent } from './chart/chart.component';
 import { GuideComponent } from './guide/guide.component';
 import { ConsultComponent } from './consult/consult.component';
 import { PermissionGuard } from '../guards/permission.guard';
+import { FocusGuard } from '../guards/focus.guard';
+import { GuidResolve } from '../guards/guid.resolve';
 
 
 const routers: Routes = [
     {
-        path: 'home', component: HomeComponent,canActivate:[PermissionGuard], children: [
-            { path: 'guide', component: GuideComponent },
+        path: 'home', component: HomeComponent, canActivate: [PermissionGuard], children: [
+            {
+                path: 'guide', component: GuideComponent, canDeactivate: [FocusGuard],
+                /*
+                resolve:
+                {
+                    guide: GuidResolve,      
+                }
+                */
+            },
             { path: 'vote', component: VotesComponent },
             { path: 'chart', component: ChartComponent },
-            { path: 'consult', component: ConsultComponent,outlet:"aux"}
+            { path: 'consult', component: ConsultComponent, outlet: "aux" }
         ]
     },
 ]
 @NgModule({
     imports: [CommonModule, RouterModule.forChild(routers)],
     exports: [RouterModule],
-    providers:[PermissionGuard]
+    providers: [PermissionGuard, FocusGuard, GuidResolve]
 })
 export class ProjectsRoutingModule { }
