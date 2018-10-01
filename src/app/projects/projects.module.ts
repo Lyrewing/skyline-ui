@@ -8,6 +8,8 @@ import { ChartComponent } from './chart/chart.component';
 import { GuideComponent } from './guide/guide.component';
 import { AddBookDialog } from '../modals/add-modal.component';
 import { ConsultComponent } from './consult/consult.component';
+import { MultiplePipe } from '../pipes/multiple.pipe';
+
 
 @NgModule({
   imports: [
@@ -16,7 +18,7 @@ import { ConsultComponent } from './consult/consult.component';
     SharedModule,
 
   ],
-  declarations: [HomeComponent, VotesComponent, ChartComponent, GuideComponent,AddBookDialog, ConsultComponent],
+  declarations: [HomeComponent, VotesComponent, ChartComponent, GuideComponent,AddBookDialog, ConsultComponent, MultiplePipe],
   entryComponents:[
     AddBookDialog
   ],
