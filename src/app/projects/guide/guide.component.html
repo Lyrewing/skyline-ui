@@ -1,7 +1,7 @@
 
 
-    <div>
-      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <div class="mat-elevation-z8 table-container">
+      <table mat-table [dataSource]="dataSource">
         <!-- Position Column -->
         <ng-container matColumnDef="position">
           <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -29,9 +29,12 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
-      <button mat-raised-button color="primary" (click)="haveRead()">投票</button>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20 ,50]" showFirstLastButtons></mat-paginator>
     </div>
+      <button mat-raised-button color="primary" (click)="haveRead()">投票</button>
 
+
+      
 
 
 
