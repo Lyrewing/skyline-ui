@@ -4,6 +4,10 @@
       <span class="app-logo">ANGULAR 应用</span>
     </mat-toolbar>
     <mat-nav-list>
+      <mat-list-item routerLink="./editor">
+          <mat-icon class="menu-icon">dialpad</mat-icon>
+          <span class="full-width">编辑器</span>
+      </mat-list-item>
       <mat-list-item routerLink="./guide">
         <mat-icon class="menu-icon">dialpad</mat-icon>
         <span class="full-width">活动导航</span>
@@ -27,7 +31,6 @@
         <span class="example-spacer"></span>
       </mat-toolbar-row>
     </mat-toolbar>
-
     <div class="nav-content">
       <div class="aux-content">
         <a [routerLink]="[{outlets:{aux: 'consult'}}]">开始咨询</a>

@@ -9,16 +9,21 @@ import { GuideComponent } from './guide/guide.component';
 import { AddBookDialog } from '../modals/add-modal.component';
 import { ConsultComponent } from './consult/consult.component';
 import { MultiplePipe } from '../pipes/multiple.pipe';
+import { EditorComponent } from './editor/editor.component';
+import { FormsModule } from '@angular/forms';
+import { EditorMdDirective } from './editor/editor-md.directive';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
   imports: [
+    BrowserModule,
     CommonModule,
     ProjectsRoutingModule,
     SharedModule,
-
+    FormsModule
   ],
-  declarations: [HomeComponent, VotesComponent, ChartComponent, GuideComponent,AddBookDialog, ConsultComponent, MultiplePipe],
+  declarations: [HomeComponent, VotesComponent, ChartComponent, GuideComponent,AddBookDialog, ConsultComponent, MultiplePipe, EditorComponent,EditorMdDirective],
   entryComponents:[
     AddBookDialog
   ],

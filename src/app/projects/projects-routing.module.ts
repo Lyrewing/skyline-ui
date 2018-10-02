@@ -9,6 +9,7 @@ import { ConsultComponent } from './consult/consult.component';
 import { PermissionGuard } from '../guards/permission.guard';
 import { FocusGuard } from '../guards/focus.guard';
 import { GuidResolve } from '../guards/guid.resolve';
+import { EditorComponent } from './editor/editor.component';
 
 
 const routers: Routes = [
@@ -25,7 +26,8 @@ const routers: Routes = [
             },
             { path: 'vote', component: VotesComponent },
             { path: 'chart', component: ChartComponent },
-            { path: 'consult', component: ConsultComponent, outlet: "aux" }
+            { path: 'consult', component: ConsultComponent, outlet: "aux" },
+            {path: 'editor',component: EditorComponent},
         ]
     },
 ]
