@@ -1,40 +1,100 @@
+<div class="header-table-container">
+  <div class="header-table">
+    <mat-card>
+      <mat-card-content>
+        <table class="form-table">
+          <tr>
+            <td>
+              <mat-form-field>
+                <mat-select placeholder="支付渠道" [formControl]="paymentsForm" multiple>
+                  <mat-option *ngFor="let topping of channelList" [value]="topping">{{topping}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field>
+                <mat-select placeholder="支付状态" [formControl]="paymentsForm" multiple>
+                  <mat-option *ngFor="let topping of statusList" [value]="topping">{{topping}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <mat-form-field>
+                <input matInput placeholder="业务订单号">
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field>
+                <input matInput [matDatepicker]="picker" placeholder="支付时间">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="haveRead()">查询</button>
+        <button mat-raised-button color="primary" (click)="haveRead()">导出</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+</div>
+
+<div class="table-container">
+  <mat-card>
+    <table mat-table [dataSource]="pageSource">
+      <!-- Position Column  class="mat-elevation-z8"-->
+      <ng-container matColumnDef="OrderNO">
+        <th mat-header-cell *matHeaderCellDef> 业务订单号. </th>
+        <td mat-cell *matCellDef="let element"> {{element.OrderNO}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="Amount">
+        <th mat-header-cell *matHeaderCellDef> 订单总金额 </th>
+        <td mat-cell *matCellDef="let element"> {{element.Amount}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="PaymentNO">
+        <th mat-header-cell *matHeaderCellDef> 订单总金额 </th>
+        <td mat-cell *matCellDef="let element"> {{element.PaymentNO}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Channel">
+        <th mat-header-cell *matHeaderCellDef> 支付渠道 </th>
+        <td mat-cell *matCellDef="let element"> {{element.Channel}} </td>
+      </ng-container>
 
 
-    <div class="mat-elevation-z8 table-container">
-      <table mat-table [dataSource]="dataSource">
-        <!-- Position Column -->
-        <ng-container matColumnDef="position">
-          <th mat-header-cell *matHeaderCellDef> No. </th>
-          <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-        </ng-container>
-
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> Name </th>
-          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-        </ng-container>
-
-        <!-- Weight Column -->
-        <ng-container matColumnDef="weight">
-          <th mat-header-cell *matHeaderCellDef> Weight </th>
-          <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-        </ng-container>
-
-        <!-- Symbol Column -->
-        <ng-container matColumnDef="symbol">
-          <th mat-header-cell *matHeaderCellDef> Symbol </th>
-          <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-      <mat-paginator [pageSizeOptions]="[5, 10, 20 ,50]" showFirstLastButtons></mat-paginator>
-    </div>
-      <button mat-raised-button color="primary" (click)="haveRead()">投票</button>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="StartTime">
+        <th mat-header-cell *matHeaderCellDef> 支付渠道 </th>
+        <td mat-cell *matCellDef="let element"> {{element.StartTime}} </td>
+      </ng-container>
 
 
-      
+      <!-- Weight Column -->
+      <ng-container matColumnDef="PaymentAmount">
+        <th mat-header-cell *matHeaderCellDef> 支付渠道 </th>
+        <td mat-cell *matCellDef="let element"> {{element.PaymentAmount}} </td>
+      </ng-container>
 
 
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Status">
+        <th mat-header-cell *matHeaderCellDef> 支付状态 </th>
+        <td mat-cell *matCellDef="let element"> {{element.Status}} </td>
+      </ng-container>
 
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [length]='length' [pageSize]='pageSize' (page)="pageData($event)" [pageSizeOptions]="pageSizeOptions" showFirstLastButtons></mat-paginator>
+  </mat-card>
+</div>

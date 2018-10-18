@@ -17,6 +17,9 @@ import {
   MatListModule,
   MatTableModule,
   MatPaginatorModule,
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
 
 } from '@angular/material';
 import {ViserModule} from 'viser-ng';
@@ -40,6 +43,9 @@ import {ViserModule} from 'viser-ng';
     MatListModule,
     MatTableModule,
     MatPaginatorModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
 
   ],
   exports: [
@@ -61,6 +67,9 @@ import {ViserModule} from 'viser-ng';
     MatListModule,
     MatTableModule,
     MatPaginatorModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ]
 })
 export class SharedModule { }

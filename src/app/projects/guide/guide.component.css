@@ -1,7 +1,16 @@
-table {
+.header-table,table {
     width: 100%;
   }
-  .table-container{
-    width: 80%;
-    margin: auto;
+  .header-table-container, .table-container{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 7px;
   }
+
+  mat-form-field{
+    width: 100%;
+  }
+  .form-table{
+    width:40%;
+  }
+

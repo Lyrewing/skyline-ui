@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Book } from '../../model/Book';
-import { books } from '../../mock/books';
+import { books } from '../../mock/mock';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatSnackBar } from '@angular/material';
 import { VoteService } from '../../services/vote.service';
 import { Router } from '@angular/router';

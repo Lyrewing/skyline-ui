@@ -10,6 +10,7 @@
 
   .nav-header{
     position: fixed;
+    z-index: 100;
   }
   .full-width{
     width: 100%
