@@ -1,11 +1,8 @@
-.example-icon {
-    padding: 0 14px;
-  }
   .nav-menu{
     width: 15rem;
   }
   .app-logo{
-    margin-left: 30px;
+    margin-left: 2rem;
   }
 
   .nav-header{
@@ -16,10 +13,7 @@
     width: 100%
   }
   .menu-icon{
-    margin-right: 40px;
-  }
-  .example-spacer {
-    flex: 1 1 auto;
+    margin-right: 2rem;
   }
  .nav-content{
    width: 100%;
