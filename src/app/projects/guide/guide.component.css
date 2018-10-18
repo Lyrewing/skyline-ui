@@ -1,12 +1,6 @@
-.header-table,table {
+  .header-table,table {
     width: 100%;
   }
-  .header-table-container, .table-container{
-    width: 100%;
-    box-sizing: border-box;
-    padding: 7px;
-  }
-
   mat-form-field{
     width: 100%;
   }

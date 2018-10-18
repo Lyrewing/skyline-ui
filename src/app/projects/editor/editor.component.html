@@ -1,5 +1,8 @@
-
-<div id="md" appEditorMd [editormdConfig]="conf" (onEditorChange)="syncModel($event)">
-  <textarea style="display: block;" [(ngModel)]="markdown"></textarea>
+<div class="container">
+    <mat-card>
+    <div id="md" appEditorMd [editormdConfig]="conf" (onEditorChange)="syncModel($event)">
+      <textarea style="display: block;" [(ngModel)]="markdown"></textarea>
+    </div>
+  </mat-card>
 </div>
-<hr>
+
