@@ -28,4 +28,7 @@
    bottom: 200px;
    z-index: 999;
  }
+ .focus{
+   background-color: rgba(0,0,0,.04)
+ }
 

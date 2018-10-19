@@ -4,22 +4,26 @@
       <span class="app-logo">ANGULAR 应用</span>
     </mat-toolbar>
     <mat-nav-list>
-      <mat-list-item routerLink="./editor">
-          <mat-icon class="menu-icon">create</mat-icon>
-          <span class="full-width">编辑器</span>
+      <h3 matSubheader>小说后台数据</h3>
+      <mat-list-item [ngClass]="{'focus':navlistOptions[3] }" (focus)="focus(3)" routerLink="./editor">
+        <mat-icon class="menu-icon">create</mat-icon>
+        <span class="full-width">编辑器</span>
       </mat-list-item>
-      <mat-list-item routerLink="./guide">
-        <mat-icon class="menu-icon">history</mat-icon>
-        <span class="full-width">支付交易历史</span>
-      </mat-list-item>
-      <mat-list-item  routerLink="./vote">
+
+      <mat-list-item [ngClass]="{'focus':navlistOptions[0] }" (focus)="focus(0)" routerLink="./vote">
         <mat-icon class="menu-icon">how_to_vote</mat-icon>
         <span class="full-width">小说投票</span>
         <mat-icon>expand_more</mat-icon>
       </mat-list-item>
-      <mat-list-item  routerLink="./chart">
+      <mat-list-item [ngClass]="{'focus':navlistOptions[2] }" (focus)="focus(2)" routerLink="./chart">
         <mat-icon class="menu-icon">assessment</mat-icon>
         <span class="full-width">投票数据排行</span>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <h3 matSubheader>宝马后台数据</h3>
+      <mat-list-item  [ngClass]="{'focus':navlistOptions[1] }" (focus)="focus(1)" routerLink="./guide">
+        <mat-icon class="menu-icon">history</mat-icon>
+        <span class="full-width">支付交易历史</span>
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
@@ -33,7 +37,7 @@
     <div class="nav-content">
       <div class="aux-content">
         <a [routerLink]="[{outlets:{aux: 'consult'}}]">开始咨询</a>
-        <a [routerLink]="[{outlets:{aux: null}}]">结束咨询</a> 
+        <a [routerLink]="[{outlets:{aux: null}}]">结束咨询</a>
         <router-outlet name="aux"></router-outlet>
       </div>
       <router-outlet></router-outlet>
