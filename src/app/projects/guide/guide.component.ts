@@ -45,8 +45,8 @@ export class GuideComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.length= this.paymentsSource.length;
-    this.pageSource = page(this.paymentsSource,0);
+    this.length = this.paymentsSource.length;
+    this.pageSource = page(this.paymentsSource, 0);
   }
 
   //分页数据
@@ -55,7 +55,7 @@ export class GuideComponent implements OnInit {
     let length = this.paymentsSource.length;
     let pageSize = pageEvent.pageSize;
     let pageIndex = pageEvent.pageIndex;
-    this.pageSource = page(this.paymentsSource, pageIndex, pageSize); 
+    this.pageSource = page(this.paymentsSource, pageIndex, pageSize);
 
 
   }
@@ -74,11 +74,11 @@ export class GuideComponent implements OnInit {
   }
 
 }
-export function page(source: any[], index: number=0, size: number = 10): any[] {
-  let pagedata: any[]=[]
+export function page(source: any[], index: number = 0, size: number = 10): any[] {
+  let pagedata: any[] = []
   for (let i = 0; i < size; i++) {
-    if(index*size+i<source.length){
-       pagedata.push(source[index*size+i])
+    if (index * size + i < source.length) {
+      pagedata.push(source[index * size + i])
     }
   }
   return pagedata;

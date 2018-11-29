@@ -9,12 +9,12 @@ export interface Payment{
 }
 
 export enum PayStatus {
-    Success,
-    Failed
+    Success=0,
+    Failed=1
 
 }
 export enum PayChannel{
-    AliPay,
-    WeChat
+    AliPay=0,
+    WeChat=0
 }
 
