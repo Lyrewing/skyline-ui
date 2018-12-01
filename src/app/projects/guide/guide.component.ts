@@ -14,7 +14,8 @@ import { PaymentService } from 'src/app/services/payment.service';
   providers: [PaymentService]
 })
 export class GuideComponent implements OnInit {
-
+  channelList: string[] = ['支付宝', '微信', '银行卡', '现金'];
+  statusList: string[] = ["成功", "失败"];
   constructor(public dialog: MatDialog, private paymentService: PaymentService) {
     this.pay = new EventEmitter<string>();
   }
