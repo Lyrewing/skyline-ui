@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  HOST:`http://74.82.210.81:8080/`
+  HOST: process.env['SERVER_HOST']
 };
