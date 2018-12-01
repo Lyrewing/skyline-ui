@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  HOST: process.env['SERVER_HOST']
+  HOST: 'http://192.168.31.207:18082/'
+  
 };
