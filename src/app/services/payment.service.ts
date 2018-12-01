@@ -11,7 +11,7 @@ export class PaymentService {
     private headerOptions: any
     constructor(private http: HttpClient) {
         this.headerOptions = {
-            headers: new HttpHeaders({ 'Content-Type': 'application/json', '': '' }),
+            headers: new HttpHeaders({ 'Content-Type': 'application/json', 'x-btcapi-usid': '344cdfaa-f6d1-46b2-85b9-018fb7b05990','Access-Control-Allow-Origin':'*' }),
         };
     }
 

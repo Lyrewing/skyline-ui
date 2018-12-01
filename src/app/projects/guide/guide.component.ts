@@ -5,15 +5,17 @@ import { Periodic } from '../../model/Periodic';
 import { FormControl } from '@angular/forms';
 import { Payment } from 'src/app/model/Payment';
 import { payments } from 'src/app/mock/mock';
+import { PaymentService } from 'src/app/services/payment.service';
 
 @Component({
   selector: 'app-guide',
   templateUrl: './guide.component.html',
-  styleUrls: ['./guide.component.css']
+  styleUrls: ['./guide.component.css'],
+  providers: [PaymentService]
 })
 export class GuideComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, private paymentService: PaymentService) {
     this.pay = new EventEmitter<string>();
   }
 
@@ -23,11 +25,11 @@ export class GuideComponent implements OnInit {
 
   //PaymentForm
   paymentsForm = new FormControl();
-  channelList: string[] = ['支付宝', '微信', '银行卡', '现金'];
-  statusList: string[] = ["成功", "失败"];
+
+
 
   //Payment Data
-  displayedColumns: string[] = ['OrderNO', 'Amount', 'PaymentNO', 'Channel', 'StartTime', 'PaymentAmount', 'Status'];
+  displayedColumns: string[] = ['orderNO', 'amount', 'paymentNO', 'channel', 'payTime', 'paymentAmount', 'status'];
   paymentsSource: Payment[] = payments;
   pageSource: Payment[] = [];
   //Payment Page
@@ -45,23 +47,22 @@ export class GuideComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.length = this.paymentsSource.length;
-    this.pageSource = page(this.paymentsSource, 0);
+    this.getPageData(1,10);
   }
 
   //分页数据
   pageData(pageEvent: PageEvent) {
     console.log(pageEvent)
-    let length = this.paymentsSource.length;
-    let pageSize = pageEvent.pageSize;
-    let pageIndex = pageEvent.pageIndex;
-    this.pageSource = page(this.paymentsSource, pageIndex, pageSize);
-
-
+    this.getPageData(pageEvent.pageIndex+1,pageEvent.pageSize);
   }
 
 
-
+  getPageData(index:number,size:number){
+    this.paymentService.getAllPaymentPage(index, size).subscribe(response => {
+      this.length=response.data.total;
+      this.pageSource=response.data.payments;
+    });
+  }
 
 
   payFunc() {
