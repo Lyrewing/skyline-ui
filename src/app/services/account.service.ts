@@ -36,7 +36,6 @@ export class AccountService {
     return this.http.post(url, null, httpOptions).pipe(
       map(response => response)
     );
-
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
